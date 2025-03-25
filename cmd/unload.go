@@ -14,5 +14,5 @@ var unloadCmd = &cobra.Command{
 }
 
 func init() {
-	RootCmd.AddCommand(unloadCmd)
+	rootCmd.AddCommand(unloadCmd)
 }
