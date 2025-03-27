@@ -33,7 +33,10 @@ func Execute(_version string) error {
 	}
 
 	modHandler, err = modapi.NewModHandler(hh)
-	return err
+	defer modHandler.Close()
+	if err != nil {
+		return err
+	}
 
 	err = rootCmd.Execute()
 	if err != nil {

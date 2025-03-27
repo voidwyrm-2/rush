@@ -11,6 +11,7 @@ var listCmd = &cobra.Command{
 	Use:   "list",
 	Short: "Lists the available mods",
 	Long:  ``,
+	Args:  cobra.ExactArgs(0),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		mods, err := modHandler.GetMods()
 		if err != nil {

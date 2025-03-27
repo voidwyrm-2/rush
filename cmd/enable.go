@@ -4,16 +4,16 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var installCmd = &cobra.Command{
-	Use:   "install",
-	Short: "Installs the given mods",
+var enableCmd = &cobra.Command{
+	Use:   "enable",
+	Short: "Enables the given mods",
 	Long:  ``,
 	Args:  cobra.RangeArgs(1, 100),
 	RunE: func(cmd *cobra.Command, args []string) error {
-		return modHandler.InstallMods(args...)
+		return modHandler.EnableMods(args...)
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(installCmd)
+	rootCmd.AddCommand(enableCmd)
 }
